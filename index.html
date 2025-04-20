@@ -1,152 +1,107 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rosyid & Riska</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Rosyid & Riska</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9f5f0;
+      color: #4b3f35;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+      background: #eaddcf;
+    }
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .section {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .lottie {
+      margin: 2rem auto;
+      max-width: 300px;
+    }
+    .countdown {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    footer {
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      background: #eaddcf;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="Nadhif Basalamah - jatuh cinta lagi.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung pemutar audio.
+  </audio>
+  <header>
+    <h1>Rosyid & Riska</h1>
+    <p>24 Agustus 2025</p>
+    <lottie-player
+      src="https://lottie.host/f838d58c-e6f4-4e4f-9bd3-00a83567e151/9FdYPFeACJ.json"
+      background="transparent"
+      speed="1"
+      loop
+      autoplay
+      class="lottie">
+    </lottie-player>
+  </header>
+  <section class="section">
+    <h2>Assalamu'alaikum Warahmatullahi Wabarakatuh</h2>
+    <p>Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri akad nikah kami.</p>
+  </section>
+  <section class="section">
+    <h3>Waktu & Tempat</h3>
+    <p>Ahad, 24 Agustus 2025</p>
+    <p>Pukul 08.00 WIB</p>
+    <p>di Kediaman Mempelai Wanita</p>
+    <p><a href="https://maps.google.com/?q=-5.343915,105.198525" target="_blank">Lihat Lokasi</a></p>
+  </section>
+  <section class="section countdown">
+    <h3>Hitung Mundur</h3>
+    <p id="countdown"></p>
+  </section>
+  <section class="section">
+    <blockquote>
+      "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri agar kamu merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang." (QS. Ar-Rum: 21)
+    </blockquote>
+  </section>
+  <footer>
+    <p>Rosyid & Riska | 2025</p>
+  </footer>
+  <script>
+    const eventDate = new Date("August 24, 2025 08:00:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      countdownEl.innerHTML = `${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
+      if (distance < 0) {
+        clearInterval(timer);
+        countdownEl.innerHTML = "Acara telah berlangsung.";
       }
-      body {
-        font-family: "Inter", sans-serif;
-        background: linear-gradient(to bottom, #f5efe6, #ece3d5);
-        overflow-x: hidden;
-      }
-      header {
-        text-align: center;
-        padding: 4rem 2rem 2rem;
-      }
-      header h1 {
-        font-family: "Great Vibes", cursive;
-        font-size: 3rem;
-        color: #5c4b3b;
-      }
-      .names {
-        font-size: 2.5rem;
-        color: #3e3e3e;
-        margin: 1rem 0;
-      }
-      .section {
-        text-align: center;
-        padding: 4rem 2rem;
-      }
-      .countdown {
-        font-size: 2rem;
-        margin: 1rem 0;
-        color: #665c4e;
-      }
-      iframe {
-        width: 100%;
-        height: 300px;
-        border: none;
-        border-radius: 12px;
-        margin-top: 1rem;
-      }
-      footer {
-        text-align: center;
-        font-size: 0.9rem;
-        color: #777;
-        padding: 2rem;
-      }
-      audio {
-        position: fixed;
-        bottom: 1rem;
-        left: 1rem;
-        z-index: 1000;
-      }
-    </style>
-  </head>
-  <body>
-    <audio autoplay loop controls>
-      <source src="Nadhif Basalamah - jatuh cinta lagi.mp3" type="audio/mp3" />
-      Your browser does not support the audio element.
-    </audio>
-
-    <header>
-      <h1>Undangan Pernikahan</h1>
-      <div class="names">Rosyid & Riska</div>
-      <lottie-player
-        src="https://lottie.host/91e6d2d6-80cb-470d-92ae-ff0a8f3ddf06/n1quTe5OIx.json"
-        background="transparent"
-        speed="1"
-        style="width: 300px; height: 300px; margin: auto"
-        loop
-        autoplay
-      >
-      </lottie-player>
-    </header>
-
-    <section class="section">
-      <h2>Akad Nikah</h2>
-      <p>24 Agustus 2025, 09.00 WIB</p>
-      <p>Bandar Lampung</p>
-    </section>
-
-    <section class="section">
-      <h2>Hitung Mundur</h2>
-      <div class="countdown" id="countdown"></div>
-    </section>
-
-    <section class="section">
-      <h2>Lokasi</h2>
-      <iframe
-        src="https://maps.google.com/maps?q=-5.343915,105.198525&hl=id&z=15&amp;output=embed"
-      ></iframe>
-    </section>
-
-    <section class="section">
-      <h2>Konfirmasi Kehadiran</h2>
-      <form action="#" method="post">
-        <input
-          type="text"
-          name="nama"
-          placeholder="Nama Anda"
-          required
-        /><br /><br />
-        <select name="kehadiran">
-          <option value="hadir">Hadir</option>
-          <option value="tidak">Tidak Hadir</option></select
-        ><br /><br />
-        <button type="submit">Kirim</button>
-      </form>
-    </section>
-
-    <section class="section">
-      <blockquote style="font-style: italic; color: #5e4b41">
-        "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
-        pasangan-pasangan untukmu dari jenismu sendiri,<br />
-        agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di
-        antaramu rasa kasih dan sayang..."<br />
-        <strong>(QS. Ar-Rum: 21)</strong>
-      </blockquote>
-    </section>
-
-    <footer>Dibuat dengan ❤️ oleh Rosyid & Riska · 2025</footer>
-
-    <script>
-      const eventDate = new Date("2025-08-24T09:00:00").getTime();
-      const countdown = document.getElementById("countdown");
-      setInterval(() => {
-        const now = new Date().getTime();
-        const diff = eventDate - now;
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-          (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-        countdown.innerHTML = `${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
-      }, 1000);
-    </script>
-  </body>
+    }, 1000);
+  </script>
+</body>
 </html>
