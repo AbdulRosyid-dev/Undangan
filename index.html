@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undangan Rosyid & Riska</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0; padding: 0; font-family: 'Lora', serif; background: #f3eee8; color: #4d3f3f;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+    }
+    h1 { font-family: 'Poppins', sans-serif; font-size: 2.5em; margin-top: 1em; }
+    .countdown { font-size: 2em; margin: 20px; }
+    iframe { border: 0; width: 90%; height: 300px; border-radius: 1em; }
+    audio { margin-top: 20px; }
+    .rsvp { margin: 30px auto; }
+    #lottie { width: 300px; height: 300px; margin: 20px auto; }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
+</head>
+<body>
+  <h1>Undangan Pernikahan</h1>
+  <h2>Rosyid & Riska</h2>
+  <div id="lottie"></div>
+  <p>"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri..."<br><em>(QS. Ar-Rum: 21)</em></p>
+
+  <div class="countdown" id="countdown"></div>
+
+  <h3>Akad Nikah</h3>
+  <p>24 Agustus 2025<br>Bandar Lampung</p>
+  <iframe src="https://maps.google.com/maps?q=-5.343915,105.198525&hl=es&z=16&amp;output=embed"></iframe>
+
+  <div class="rsvp">
+    <h3>Konfirmasi Kehadiran</h3>
+    <form action="https://formspree.io/f/mwkgyjnl" method="POST">
+      <input type="text" name="name" placeholder="Nama Anda" required/><br><br>
+      <input type="email" name="email" placeholder="Email" required/><br><br>
+      <textarea name="message" placeholder="Ucapan / Doa" required></textarea><br><br>
+      <button type="submit">Kirim</button>
+    </form>
+  </div>
+
+  <audio controls autoplay loop>
+    <source src="Nadhif Basalamah - jatuh cinta lagi.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Countdown
+    const targetDate = new Date("2025-08-24T00:00:00").getTime();
+    const countdown = document.getElementById("countdown");
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      countdown.innerHTML = `Menuju hari bahagia: ${days} hari lagi`;
+    }, 1000);
+
+    // Lottie animation
+    var anim = lottie.loadAnimation({
+      container: document.getElementById('lottie'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://lottie.host/20184b35-4467-4444-8023-1ce76e7290b5/l0UuWMEcWl.json'
+    });
+  </script>
+</body>
+</html>
