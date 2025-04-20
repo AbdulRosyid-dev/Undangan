@@ -1,48 +1,78 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Undangan Rosyid & Riska</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan Rosyid & Riska</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f9f5f0;
-      color: #4b3f35;
-      overflow-x: hidden;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #fcf9f3;
+      color: #4b3f35;
+    }
+
     header {
       text-align: center;
-      padding: 3rem 1rem 1rem;
-      background: #eaddcf;
+      background: #f5eee6;
+      padding: 3rem 1rem 2rem;
     }
+
     header h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 3rem;
       margin-bottom: 0.5rem;
+      color: #59483e;
     }
-    .section {
+
+    header p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .lottie {
+      margin: 0 auto;
+      max-width: 250px;
+    }
+
+    section {
       padding: 2rem 1rem;
       text-align: center;
     }
-    .lottie {
-      margin: 2rem auto;
-      max-width: 300px;
+
+    section h2, section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
     }
+
+    a {
+      color: #3e7c59;
+      text-decoration: none;
+    }
+
     .countdown {
       font-size: 1.2rem;
       font-weight: bold;
     }
+
+    blockquote {
+      font-style: italic;
+      margin: 2rem auto;
+      max-width: 600px;
+    }
+
     footer {
       padding: 1rem;
       text-align: center;
-      font-size: 0.9rem;
-      background: #eaddcf;
+      background: #f5eee6;
+      font-size: 0.85rem;
     }
   </style>
 </head>
@@ -51,41 +81,48 @@
     <source src="Nadhif Basalamah - jatuh cinta lagi.mp3" type="audio/mpeg">
     Browser Anda tidak mendukung pemutar audio.
   </audio>
+
   <header>
     <h1>Rosyid & Riska</h1>
     <p>24 Agustus 2025</p>
     <lottie-player
-      src="https://lottie.host/51a6d2eb-c46c-4f09-9427-4e31d8a3ed40/BqOjjyppj9.json"
+      src="https://lottie.host/f32b2a9e-d7c9-4590-a46e-196a76f96d90/W2O1LBHKfy.json"
       background="transparent"
       speed="1"
-      style="width: 300px; height: 300px; margin: 0 auto;"
+      style="width: 280px; height: 280px;"
       loop
       autoplay>
     </lottie-player>
   </header>
-  <section class="section">
+
+  <section>
     <h2>Assalamu'alaikum Warahmatullahi Wabarakatuh</h2>
     <p>Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri akad nikah kami.</p>
   </section>
-  <section class="section">
+
+  <section>
     <h3>Waktu & Tempat</h3>
     <p>Ahad, 24 Agustus 2025</p>
     <p>Pukul 08.00 WIB</p>
     <p>di Kediaman Mempelai Wanita</p>
     <p><a href="https://maps.google.com/?q=-5.343915,105.198525" target="_blank">Lihat Lokasi</a></p>
   </section>
-  <section class="section countdown">
+
+  <section class="countdown">
     <h3>Hitung Mundur</h3>
     <p id="countdown"></p>
   </section>
-  <section class="section">
+
+  <section>
     <blockquote>
       "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri agar kamu merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang." (QS. Ar-Rum: 21)
     </blockquote>
   </section>
+
   <footer>
-    <p>Rosyid & Riska | 2025</p>
+    <p>Rosyid & Riska &copy; 2025</p>
   </footer>
+
   <script>
     const eventDate = new Date("August 24, 2025 08:00:00").getTime();
     const countdownEl = document.getElementById("countdown");
