@@ -1,70 +1,152 @@
-
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Undangan Rosyid & Riska</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Poppins&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0; padding: 0; font-family: 'Lora', serif; background: #f3eee8; color: #4d3f3f;
-      display: flex; flex-direction: column; align-items: center; text-align: center;
-    }
-    h1 { font-family: 'Poppins', sans-serif; font-size: 2.5em; margin-top: 1em; }
-    .countdown { font-size: 2em; margin: 20px; }
-    iframe { border: 0; width: 90%; height: 300px; border-radius: 1em; }
-    audio { margin-top: 20px; }
-    .rsvp { margin: 30px auto; }
-    #lottie { width: 300px; height: 300px; margin: 20px auto; }
-  </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
-</head>
-<body>
-  <h1>Undangan Pernikahan</h1>
-  <h2>Rosyid & Riska</h2>
-  <div id="lottie"></div>
-  <p>"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri..."<br><em>(QS. Ar-Rum: 21)</em></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rosyid & Riska</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(to bottom, #f5efe6, #ece3d5);
+        overflow-x: hidden;
+      }
+      header {
+        text-align: center;
+        padding: 4rem 2rem 2rem;
+      }
+      header h1 {
+        font-family: "Great Vibes", cursive;
+        font-size: 3rem;
+        color: #5c4b3b;
+      }
+      .names {
+        font-size: 2.5rem;
+        color: #3e3e3e;
+        margin: 1rem 0;
+      }
+      .section {
+        text-align: center;
+        padding: 4rem 2rem;
+      }
+      .countdown {
+        font-size: 2rem;
+        margin: 1rem 0;
+        color: #665c4e;
+      }
+      iframe {
+        width: 100%;
+        height: 300px;
+        border: none;
+        border-radius: 12px;
+        margin-top: 1rem;
+      }
+      footer {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #777;
+        padding: 2rem;
+      }
+      audio {
+        position: fixed;
+        bottom: 1rem;
+        left: 1rem;
+        z-index: 1000;
+      }
+    </style>
+  </head>
+  <body>
+    <audio autoplay loop controls>
+      <source src="Nadhif Basalamah - jatuh cinta lagi.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
 
-  <div class="countdown" id="countdown"></div>
+    <header>
+      <h1>Undangan Pernikahan</h1>
+      <div class="names">Rosyid & Riska</div>
+      <lottie-player
+        src="https://lottie.host/91e6d2d6-80cb-470d-92ae-ff0a8f3ddf06/n1quTe5OIx.json"
+        background="transparent"
+        speed="1"
+        style="width: 300px; height: 300px; margin: auto"
+        loop
+        autoplay
+      >
+      </lottie-player>
+    </header>
 
-  <h3>Akad Nikah</h3>
-  <p>24 Agustus 2025<br>Bandar Lampung</p>
-  <iframe src="https://maps.google.com/maps?q=-5.343915,105.198525&hl=es&z=16&amp;output=embed"></iframe>
+    <section class="section">
+      <h2>Akad Nikah</h2>
+      <p>24 Agustus 2025, 09.00 WIB</p>
+      <p>Bandar Lampung</p>
+    </section>
 
-  <div class="rsvp">
-    <h3>Konfirmasi Kehadiran</h3>
-    <form action="https://formspree.io/f/mwkgyjnl" method="POST">
-      <input type="text" name="name" placeholder="Nama Anda" required/><br><br>
-      <input type="email" name="email" placeholder="Email" required/><br><br>
-      <textarea name="message" placeholder="Ucapan / Doa" required></textarea><br><br>
-      <button type="submit">Kirim</button>
-    </form>
-  </div>
+    <section class="section">
+      <h2>Hitung Mundur</h2>
+      <div class="countdown" id="countdown"></div>
+    </section>
 
-  <audio controls autoplay loop>
-    <source src="Nadhif Basalamah - jatuh cinta lagi.mp3" type="audio/mpeg">
-  </audio>
+    <section class="section">
+      <h2>Lokasi</h2>
+      <iframe
+        src="https://maps.google.com/maps?q=-5.343915,105.198525&hl=id&z=15&amp;output=embed"
+      ></iframe>
+    </section>
 
-  <script>
-    // Countdown
-    const targetDate = new Date("2025-08-24T00:00:00").getTime();
-    const countdown = document.getElementById("countdown");
-    setInterval(() => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      countdown.innerHTML = `Menuju hari bahagia: ${days} hari lagi`;
-    }, 1000);
+    <section class="section">
+      <h2>Konfirmasi Kehadiran</h2>
+      <form action="#" method="post">
+        <input
+          type="text"
+          name="nama"
+          placeholder="Nama Anda"
+          required
+        /><br /><br />
+        <select name="kehadiran">
+          <option value="hadir">Hadir</option>
+          <option value="tidak">Tidak Hadir</option></select
+        ><br /><br />
+        <button type="submit">Kirim</button>
+      </form>
+    </section>
 
-    // Lottie animation
-    var anim = lottie.loadAnimation({
-      container: document.getElementById('lottie'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: 'https://lottie.host/20184b35-4467-4444-8023-1ce76e7290b5/l0UuWMEcWl.json'
-    });
-  </script>
-</body>
+    <section class="section">
+      <blockquote style="font-style: italic; color: #5e4b41">
+        "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+        pasangan-pasangan untukmu dari jenismu sendiri,<br />
+        agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di
+        antaramu rasa kasih dan sayang..."<br />
+        <strong>(QS. Ar-Rum: 21)</strong>
+      </blockquote>
+    </section>
+
+    <footer>Dibuat dengan ❤️ oleh Rosyid & Riska · 2025</footer>
+
+    <script>
+      const eventDate = new Date("2025-08-24T09:00:00").getTime();
+      const countdown = document.getElementById("countdown");
+      setInterval(() => {
+        const now = new Date().getTime();
+        const diff = eventDate - now;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        countdown.innerHTML = `${days} hari ${hours} jam ${minutes} menit ${seconds} detik`;
+      }, 1000);
+    </script>
+  </body>
 </html>
